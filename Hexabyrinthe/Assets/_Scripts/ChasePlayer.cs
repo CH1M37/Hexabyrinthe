@@ -10,6 +10,14 @@ public class ChasePlayer : MonoBehaviour {
     public int MaxDist = 10;
     public int MinDist = 1;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("TU PERDS !");
+        }
+    }
+
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
