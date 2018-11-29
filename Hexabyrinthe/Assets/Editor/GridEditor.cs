@@ -10,13 +10,12 @@ public class GridEditor : Editor {
 
         GridHex grid = (GridHex)target;
 
-        int size = grid.gridSize;
-        float scale = grid.gridScale;
+        int size = grid.numberOfTiles;
 
         if(GUILayout.Button("Create Grid"))
         {
             grid.ResetGrid();
-            grid.CreateGrid(size, scale);
+            grid.CreateGrid(size);
         }
     }
 }
