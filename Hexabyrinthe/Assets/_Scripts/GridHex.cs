@@ -14,7 +14,7 @@ public class GridHex : MonoBehaviour {
 
     public void ResetGrid()
     {
-        GameObject[] tilesArray = GameObject.FindGameObjectsWithTag("ground");
+        GameObject[] tilesArray = GameObject.FindGameObjectsWithTag("tile");
 
         foreach (GameObject tileToDestroy in tilesArray)
         {
