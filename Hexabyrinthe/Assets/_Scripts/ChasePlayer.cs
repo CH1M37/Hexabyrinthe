@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour {
 
-    public Transform Player;
+    Transform Player;
 
-    public int MoveSpeed = 4;
+    public int MoveSpeed = 3;
     public int MaxDist = 10;
-    public int MinDist = 5;
-    
+    public int MinDist = 1;
+
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
-        transform.LookAt(Player);
-
-        if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+        if (Player != null)
         {
+            transform.LookAt(Player);
 
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-
-
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+            if (Vector3.Distance(transform.position, Player.position) >= MinDist)
             {
-                //Here Call any function U want Like Shoot at here or something
-            }
 
+                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+
+
+
+                if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+                {
+                    //Here Call any function U want Like Shoot at here or something
+                }
+
+            }
         }
+        
     }
 
 }
